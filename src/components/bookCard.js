@@ -90,7 +90,7 @@ function showCoverPlaceholder(cover, image, title) {
     cover.setAttribute('role', 'img');
     cover.setAttribute(
         'aria-label',
-        `Обложка книги «${title}» отсутствует`
+        `No cover available for "${title}"`
     );
 
     const placeholder = document.createElement('span');
@@ -117,7 +117,7 @@ function createBookCover(book, title) {
         const image = document.createElement('img');
 
         image.className = 'book-card__cover-image';
-        image.alt = `Обложка книги «${title}»`;
+        image.alt = `Cover of "${title}"`;
         image.loading = 'lazy';
         image.decoding = 'async';
 
