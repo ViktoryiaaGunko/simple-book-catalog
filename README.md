@@ -1,6 +1,6 @@
 # The Library — Simple Book Catalog
 
-**Live Demo:** [Open the live site](LIVE_DEMO_URL_HERE)
+**Live Demo:** [Open the live site](https://simple-book-catalog-leq9lq2b7-vika-2879.vercel.app/)
 
 ## Task
 
@@ -11,7 +11,7 @@ A user can search with the Search button, press Enter, or wait for the automatic
 while typing. Books can also be added to a Favorites list. The Favorites list is saved
 in the browser with `localStorage`.
 
-**Task document:** [Open the task document](TASK_DOCUMENT_URL_HERE)
+**Task document:** [Open the task document](https://drive.google.com/file/d/1RBRcuH-_oAvtjem5Xs0c4NXZ8I38aYyH/view)
 
 ## How to run the app
 
