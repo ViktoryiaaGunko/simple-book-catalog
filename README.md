@@ -1,6 +1,6 @@
 # The Library — Simple Book Catalog
 
-**Live Demo:** [Open the live site](https://simple-book-catalog-leq9lq2b7-vika-2879.vercel.app/)
+**Live Demo:** [Open the live site](https://simple-book-catalog-peach.vercel.app/)
 
 ## Task
 
