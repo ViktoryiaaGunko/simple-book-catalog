@@ -776,13 +776,11 @@ a {
 }
 
 .favorite-item__heart {
-    display: grid;
+    display: block;
     width: 14px;
     height: 14px;
-    place-items: center;
-    color: var(--color-heart);
-    font-size: 14px;
-    line-height: 1;
+    fill: #e11d48;
+    stroke: #e11d48;
 }
 
 /* Empty favorites state */

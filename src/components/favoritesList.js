@@ -1,6 +1,5 @@
-src/components/favoritesList.js
-
 const COVER_URL = 'https://covers.openlibrary.org/b/id';
+const SVG_NAMESPACE = 'http://www.w3.org/2000/svg';
 
 /**
  * Returns a safe book title.
@@ -155,13 +154,31 @@ function createFavoriteCover(book, title) {
  * @returns {HTMLElement}
  */
 function createFilledHeart() {
-    const heart = document.createElement('span');
+    const svg = document.createElementNS(SVG_NAMESPACE, 'svg');
+    const path = document.createElementNS(SVG_NAMESPACE, 'path');
 
-    heart.className = 'favorite-item__heart';
-    heart.textContent = '♥';
-    heart.setAttribute('aria-hidden', 'true');
+    svg.classList.add('favorite-item__heart');
+    svg.setAttribute('viewBox', '0 0 24 24');
+    svg.setAttribute('width', '14');
+    svg.setAttribute('height', '14');
+    svg.setAttribute('fill', '#e11d48');
+    svg.setAttribute('stroke', '#e11d48');
+    svg.setAttribute('stroke-width', '2');
+    svg.setAttribute('stroke-linecap', 'round');
+    svg.setAttribute('stroke-linejoin', 'round');
+    svg.setAttribute('aria-hidden', 'true');
+    svg.setAttribute('focusable', 'false');
 
-    return heart;
+    path.setAttribute(
+        'd',
+        'M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06' +
+        'a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84' +
+        'a5.5 5.5 0 0 0 0-7.78Z'
+    );
+
+    svg.append(path);
+
+    return svg;
 }
 
 /**
