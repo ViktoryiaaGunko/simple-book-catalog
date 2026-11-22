@@ -3,6 +3,7 @@ import { createBookCard } from './components/bookCard.js';
 import {
     renderFavorites
 } from './components/favoritesList.js';
+import { debounce } from './utils/debounce.js';
 import {
     getFavorites,
     saveFavorites
@@ -432,11 +433,50 @@ function removeFavorite(bookId) {
 }
 
 /*
+ * Run an automatic search after the user stops typing.
+ * Empty values are ignored because empty-input messages should
+ * only appear after an explicit form submission.
+ */
+const debouncedSearch = debounce((query) => {
+    if (!query.trim()) {
+        return;
+    }
+
+    performSearch(query);
+}, 500);
+
+/*
  * Search works both with the Search button and the Enter key.
+ * Cancel the pending automatic search to avoid duplicate requests.
  */
 searchForm.addEventListener('submit', (event) => {
     event.preventDefault();
+    debouncedSearch.cancel();
     performSearch(searchInput.value);
+});
+
+/*
+ * Start a debounced search when the user types a non-empty query.
+ */
+searchInput.addEventListener('input', () => {
+    const query = searchInput.value;
+
+    if (!query.trim()) {
+        debouncedSearch.cancel();
+
+        /*
+         * Invalidate an active request so results from an older query
+         * are not displayed after the input has been cleared.
+         */
+        activeRequestId += 1;
+        clearBooks();
+        booksGrid.setAttribute('aria-busy', 'false');
+        setStatus(null);
+
+        return;
+    }
+
+    debouncedSearch(query);
 });
 
 /*

@@ -1097,3 +1097,14 @@ a:focus-visible {
     opacity: 0.55;
     transform: none;
 }
+
+.site-footer__link {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.site-footer__link:hover {
+    text-decoration: underline;
+}
+
