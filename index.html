@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Search for books and build your personal library"
+  >
+
+  <title>The Library</title>
+
+  <link rel="stylesheet" href="./src/styles/style.css">
+</head>
+
+<body>
+<!-- Site header -->
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="brand" href="#" aria-label="The Library home">
+          <span class="brand__icon-wrapper" aria-hidden="true">
+            <img
+              class="brand__icon"
+              src="./assets/icons/book.svg"
+              alt=""
+            >
+          </span>
+
+      <span class="brand__content">
+            <span class="brand__title">The Library</span>
+            <span class="brand__subtitle">
+              Discover your next favorite book
+            </span>
+          </span>
+    </a>
+  </div>
+</header>
+
+<main>
+  <!-- Search section -->
+  <section class="search-section" aria-labelledby="search-title">
+    <div class="container search-section__inner">
+      <h1 class="search-section__title" id="search-title">
+        Discover Your Next Great Read
+      </h1>
+
+      <p class="search-section__description">
+        Search millions of books, build your personal library, and never
+        lose track of what to read next.
+      </p>
+
+      <form class="search-form" role="search">
+        <div class="search-form__field">
+          <label class="visually-hidden" for="book-search">
+            Search for books by title or author
+          </label>
+
+          <img
+            class="search-form__icon"
+            src="./assets/icons/search.svg"
+            alt=""
+            aria-hidden="true"
+          >
+
+          <input
+            class="search-form__input"
+            id="book-search"
+            name="query"
+            type="search"
+            placeholder="Search for books by title or author..."
+            autocomplete="off"
+          >
+        </div>
+
+        <button class="search-form__button" type="submit">
+          Search
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Books and favorites -->
+  <div class="container library-layout">
+    <section class="books-section" aria-label="Books">
+      <div class="books-grid">
+
+      <!-- Book card -->
+        <article class="book-card">
+          <div
+            class="book-card__cover book-card__cover--green"
+            role="img"
+            aria-label="The Great Gatsby book cover"
+          >
+                <span class="book-card__cover-decoration" aria-hidden="true">
+                  F. Scott Fitzgerald
+                </span>
+
+            <span class="book-card__cover-title" aria-hidden="true">
+                  The Great Gatsby
+                </span>
+
+            <button
+              class="book-card__favorite"
+              type="button"
+              aria-label="Add The Great Gatsby to favorites"
+              aria-pressed="false"
+            >
+              <img
+                class="book-card__favorite-icon"
+                src="./assets/icons/heart.svg"
+                alt=""
+                aria-hidden="true"
+              >
+            </button>
+          </div>
+
+          <div class="book-card__content">
+            <h3 class="book-card__title">The Great Gatsby</h3>
+            <p class="book-card__author">F. Scott Fitzgerald</p>
+            <p class="book-card__year">1925</p>
+          </div>
+        </article>
+
+        <!-- Book card -->
+        <article class="book-card">
+          <div
+            class="book-card__cover book-card__cover--orange"
+            role="img"
+            aria-label="1984 book cover"
+          >
+                <span class="book-card__cover-decoration" aria-hidden="true">
+                  George Orwell
+                </span>
+
+            <span class="book-card__cover-title" aria-hidden="true">
+                  1984
+                </span>
+
+            <button
+              class="book-card__favorite is-favorite"
+              type="button"
+              aria-label="Remove 1984 from favorites"
+              aria-pressed="true"
+            >
+              <img
+                class="book-card__favorite-icon"
+                src="./assets/icons/heart.svg"
+                alt=""
+                aria-hidden="true"
+              >
+            </button>
+          </div>
+
+          <div class="book-card__content">
+            <h3 class="book-card__title">1984</h3>
+            <p class="book-card__author">George Orwell</p>
+            <p class="book-card__year">1949</p>
+          </div>
+        </article>
+
+        <!-- Book card -->
+        <article class="book-card">
+          <div
+            class="book-card__cover book-card__cover--rose"
+            role="img"
+            aria-label="Pride and Prejudice book cover"
+          >
+                <span class="book-card__cover-decoration" aria-hidden="true">
+                  Jane Austen
+                </span>
+
+            <span class="book-card__cover-title" aria-hidden="true">
+                  Pride &amp; Prejudice
+                </span>
+
+            <button
+              class="book-card__favorite"
+              type="button"
+              aria-label="Add Pride and Prejudice to favorites"
+              aria-pressed="false"
+            >
+              <img
+                class="book-card__favorite-icon"
+                src="./assets/icons/heart.svg"
+                alt=""
+                aria-hidden="true"
+              >
+            </button>
+          </div>
+
+          <div class="book-card__content">
+            <h3 class="book-card__title">Pride and Prejudice</h3>
+            <p class="book-card__author">Jane Austen</p>
+            <p class="book-card__year">1813</p>
+          </div>
+        </article>
+
+        <!-- Book card -->
+        <article class="book-card">
+          <div
+            class="book-card__cover book-card__cover--blue"
+            role="img"
+            aria-label="To Kill a Mockingbird book cover"
+          >
+                <span class="book-card__cover-decoration" aria-hidden="true">
+                  Harper Lee
+                </span>
+
+            <span class="book-card__cover-title" aria-hidden="true">
+                  To Kill a Mockingbird
+                </span>
+
+            <button
+              class="book-card__favorite"
+              type="button"
+              aria-label="Add To Kill a Mockingbird to favorites"
+              aria-pressed="false"
+            >
+              <img
+                class="book-card__favorite-icon"
+                src="./assets/icons/heart.svg"
+                alt=""
+                aria-hidden="true"
+              >
+            </button>
+          </div>
+
+          <div class="book-card__content">
+            <h3 class="book-card__title">To Kill a Mockingbird</h3>
+            <p class="book-card__author">Harper Lee</p>
+            <p class="book-card__year">1960</p>
+          </div>
+        </article>
+
+        <!-- Book card -->
+        <article class="book-card">
+          <div
+            class="book-card__cover book-card__cover--purple"
+            role="img"
+            aria-label="The Picture of Dorian Gray book cover"
+          >
+                <span class="book-card__cover-decoration" aria-hidden="true">
+                  Oscar Wilde
+                </span>
+
+            <span class="book-card__cover-title" aria-hidden="true">
+                  The Picture of Dorian Gray
+                </span>
+
+            <button
+              class="book-card__favorite"
+              type="button"
+              aria-label="Add The Picture of Dorian Gray to favorites"
+              aria-pressed="false"
+            >
+              <img
+                class="book-card__favorite-icon"
+                src="./assets/icons/heart.svg"
+                alt=""
+                aria-hidden="true"
+              >
+            </button>
+          </div>
+
+          <div class="book-card__content">
+            <h3 class="book-card__title">
+              The Picture of Dorian Gray
+            </h3>
+            <p class="book-card__author">Oscar Wilde</p>
+            <p class="book-card__year">1890</p>
+          </div>
+        </article>
+
+        <!-- Book card -->
+        <article class="book-card">
+          <div
+            class="book-card__cover book-card__cover--brown"
+            role="img"
+            aria-label="The Hobbit book cover"
+          >
+                <span class="book-card__cover-decoration" aria-hidden="true">
+                  J. R. R. Tolkien
+                </span>
+
+            <span class="book-card__cover-title" aria-hidden="true">
+                  The Hobbit
+                </span>
+
+            <button
+              class="book-card__favorite"
+              type="button"
+              aria-label="Add The Hobbit to favorites"
+              aria-pressed="false"
+            >
+              <img
+                class="book-card__favorite-icon"
+                src="./assets/icons/heart.svg"
+                alt=""
+                aria-hidden="true"
+              >
+            </button>
+          </div>
+
+          <div class="book-card__content">
+            <h3 class="book-card__title">The Hobbit</h3>
+            <p class="book-card__author">J. R. R. Tolkien</p>
+            <p class="book-card__year">1937</p>
+          </div>
+        </article>
+
+        <!-- Book card -->
+        <article class="book-card">
+          <div
+            class="book-card__cover book-card__cover--navy"
+            role="img"
+            aria-label="Moby Dick book cover"
+          >
+                <span class="book-card__cover-decoration" aria-hidden="true">
+                  Herman Melville
+                </span>
+
+            <span class="book-card__cover-title" aria-hidden="true">
+                  Moby Dick
+                </span>
+
+            <button
+              class="book-card__favorite"
+              type="button"
+              aria-label="Add Moby Dick to favorites"
+              aria-pressed="false"
+            >
+              <img
+                class="book-card__favorite-icon"
+                src="./assets/icons/heart.svg"
+                alt=""
+                aria-hidden="true"
+              >
+            </button>
+          </div>
+
+          <div class="book-card__content">
+            <h3 class="book-card__title">Moby Dick</h3>
+            <p class="book-card__author">Herman Melville</p>
+            <p class="book-card__year">1851</p>
+          </div>
+        </article>
+
+        <!-- Book card -->
+        <article class="book-card">
+          <div
+            class="book-card__cover book-card__cover--gold"
+            role="img"
+            aria-label="The Catcher in the Rye book cover"
+          >
+                <span class="book-card__cover-decoration" aria-hidden="true">
+                  J. D. Salinger
+                </span>
+
+            <span class="book-card__cover-title" aria-hidden="true">
+                  The Catcher in the Rye
+                </span>
+
+            <button
+              class="book-card__favorite"
+              type="button"
+              aria-label="Add The Catcher in the Rye to favorites"
+              aria-pressed="false"
+            >
+              <img
+                class="book-card__favorite-icon"
+                src="./assets/icons/heart.svg"
+                alt=""
+                aria-hidden="true"
+              >
+            </button>
+          </div>
+
+          <div class="book-card__content">
+            <h3 class="book-card__title">The Catcher in the Rye</h3>
+            <p class="book-card__author">J. D. Salinger</p>
+            <p class="book-card__year">1951</p>
+          </div>
+        </article>
+
+        <!-- Book card -->
+        <article class="book-card">
+          <div
+            class="book-card__cover book-card__cover--teal"
+            role="img"
+            aria-label="Little Women book cover"
+          >
+                <span class="book-card__cover-decoration" aria-hidden="true">
+                  Louisa May Alcott
+                </span>
+
+            <span class="book-card__cover-title" aria-hidden="true">
+                  Little Women
+                </span>
+
+            <button
+              class="book-card__favorite"
+              type="button"
+              aria-label="Add Little Women to favorites"
+              aria-pressed="false"
+            >
+              <img
+                class="book-card__favorite-icon"
+                src="./assets/icons/heart.svg"
+                alt=""
+                aria-hidden="true"
+              >
+            </button>
+          </div>
+
+          <div class="book-card__content">
+            <h3 class="book-card__title">Little Women</h3>
+            <p class="book-card__author">Louisa May Alcott</p>
+            <p class="book-card__year">1868</p>
+          </div>
+        </article>
+
+        <!-- Book card -->
+        <article class="book-card">
+          <div
+            class="book-card__cover book-card__cover--red"
+            role="img"
+            aria-label="Brave New World book cover"
+          >
+                <span class="book-card__cover-decoration" aria-hidden="true">
+                  Aldous Huxley
+                </span>
+
+            <span class="book-card__cover-title" aria-hidden="true">
+                  Brave New World
+                </span>
+
+            <button
+              class="book-card__favorite"
+              type="button"
+              aria-label="Add Brave New World to favorites"
+              aria-pressed="false"
+            >
+              <img
+                class="book-card__favorite-icon"
+                src="./assets/icons/heart.svg"
+                alt=""
+                aria-hidden="true"
+              >
+            </button>
+          </div>
+
+          <div class="book-card__content">
+            <h3 class="book-card__title">Brave New World</h3>
+            <p class="book-card__author">Aldous Huxley</p>
+            <p class="book-card__year">1932</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Favorites panel -->
+    <aside
+      class="favorites-panel"
+      aria-labelledby="favorites-title"
+    >
+      <div class="favorites-panel__header">
+    <span class="favorites-panel__icon-wrapper" aria-hidden="true">
+      <img
+        class="favorites-panel__icon"
+        src="./assets/icons/heart.svg"
+        alt=""
+      >
+    </span>
+
+        <div class="favorites-panel__heading">
+          <h2
+            class="favorites-panel__title"
+            id="favorites-title"
+          >
+            Favorites
+          </h2>
+
+          <p class="favorites-panel__counter">
+            0 books saved
+          </p>
+        </div>
+      </div>
+
+
+      <div class="favorites-panel__content">
+        <p class="favorites-empty">
+          No saved books yet
+        </p>
+
+        <ul
+          class="favorites-list"
+          aria-label="Saved books"
+          hidden
+        ></ul>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<!-- Favorite item template for future JavaScript rendering -->
+<template id="favorite-item-template">
+  <li class="favorite-item">
+    <div
+      class="favorite-item__cover"
+      role="img"
+      aria-label="Book cover unavailable"
+    >
+      <img
+        class="favorite-item__cover-icon"
+        src="./assets/icons/book.svg"
+        alt=""
+        aria-hidden="true"
+      >
+    </div>
+
+    <div class="favorite-item__details">
+      <h3 class="favorite-item__title">Book title</h3>
+      <p class="favorite-item__author">Book author</p>
+      <p class="favorite-item__year">1900</p>
+    </div>
+
+    <button
+      class="favorite-item__remove"
+      type="button"
+      aria-label="Remove book from favorites"
+    >
+      <span class="favorite-item__heart" aria-hidden="true">♥</span>
+    </button>
+  </li>
+</template>
+
+<!-- Site footer -->
+<footer class="site-footer">
+  <div class="container">
+    <p class="site-footer__text">
+      Powered by Open Library
+    </p>
+  </div>
+</footer>
+
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
+
