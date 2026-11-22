@@ -1045,3 +1045,50 @@ a:focus-visible {
         font-size: 0.65rem;
     }
 }
+
+/* Favorites panel state rendered by JavaScript */
+.favorites-panel__content {
+    justify-content: flex-start;
+}
+
+/*
+ * Keep the empty message directly below the header divider instead
+ * of centering it vertically inside the full-height panel.
+ */
+.favorites-empty {
+    margin: 0;
+    padding: 20px 8px;
+}
+
+/* Miniature cover placeholder */
+.favorite-item__cover--placeholder {
+    background-color: var(--color-primary-soft);
+}
+
+.favorite-item__cover--placeholder .favorite-item__cover-icon {
+    opacity: 0.55;
+    filter:
+      brightness(0)
+      saturate(100%)
+      invert(35%)
+      sepia(16%)
+      saturate(1412%)
+      hue-rotate(103deg)
+      brightness(91%)
+      contrast(88%);
+}
+
+/* Filled heart used to remove a saved book */
+.favorite-item__heart {
+    color: var(--color-heart);
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/* Books without a stable API key cannot be saved */
+.favorite-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+    transform: none;
+}
