@@ -167,9 +167,10 @@ function createFavoriteButton(title) {
  * Creates a book card DOM element.
  *
  * @param {Object} book
+ * @param {(book: Object) => void} [onFavoriteToggle]
  * @returns {HTMLElement}
  */
-export function createBookCard(book) {
+export function createBookCard(book, onFavoriteToggle) {
     const title = getBookTitle(book);
     const authors = getBookAuthors(book);
 
@@ -183,6 +184,12 @@ export function createBookCard(book) {
 
     const cover = createBookCover(book, title);
     const favoriteButton = createFavoriteButton(title);
+
+    if (typeof onFavoriteToggle === 'function') {
+        favoriteButton.addEventListener('click', () => {
+            onFavoriteToggle(book);
+        });
+    }
 
     cover.append(favoriteButton);
 
@@ -216,3 +223,4 @@ export function createBookCard(book) {
 
     return card;
 }
+

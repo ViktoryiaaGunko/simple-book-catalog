@@ -279,8 +279,17 @@ function renderBooks(books) {
     displayedBooks.clear();
 
     books.forEach((book) => {
-        const card = createBookCard(book);
         const storedBook = createStoredFavorite(book);
+
+        const card = createBookCard(
+            book,
+            storedBook
+                ? () => {
+                    toggleFavorite(storedBook.key);
+                }
+                : undefined
+        );
+
         const favoriteButton = card.querySelector(
             '.favorite-btn'
         );
@@ -330,7 +339,7 @@ async function performSearch(query) {
     if (!normalizedQuery) {
         clearBooks();
         booksGrid.setAttribute('aria-busy', 'false');
-        setStatus('Введите запрос');
+        setStatus('Enter a search term');
         searchInput.focus();
 
         return;
@@ -353,7 +362,7 @@ async function performSearch(query) {
         booksGrid.setAttribute('aria-busy', 'false');
 
         if (books.length === 0) {
-            setStatus('Ничего не найдено');
+            setStatus('No books found');
 
             return;
         }
@@ -367,7 +376,7 @@ async function performSearch(query) {
 
         booksGrid.setAttribute('aria-busy', 'false');
         clearBooks();
-        setStatus('Ошибка сети', { isError: true });
+        setStatus('Network error', { isError: true });
     }
 }
 
@@ -428,36 +437,6 @@ function removeFavorite(bookId) {
 searchForm.addEventListener('submit', (event) => {
     event.preventDefault();
     performSearch(searchInput.value);
-});
-
-/*
- * Event delegation supports every card rendered after an API request.
- */
-booksGrid.addEventListener('click', (event) => {
-    if (!(event.target instanceof Element)) {
-        return;
-    }
-
-    const favoriteButton = event.target.closest(
-        '.favorite-btn'
-    );
-
-    if (
-        !favoriteButton ||
-        !booksGrid.contains(favoriteButton) ||
-        favoriteButton.disabled
-    ) {
-        return;
-    }
-
-    const card = favoriteButton.closest('.book-card');
-    const bookId = card?.dataset.bookId;
-
-    if (!bookId) {
-        return;
-    }
-
-    toggleFavorite(bookId);
 });
 
 /*
